@@ -1,0 +1,141 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+.homePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1240px;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    width: 100%;
+}
+
+.header nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.header a {
+    color: rgb(0, 0, 0);
+}
+
+.nav {
+    text-decoration: none;
+    
+    &.active {
+        text-decoration: underline;
+    }
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px 8px 8px 8px;
+    width: 100%;
+}
+
+.banner p {
+    text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+    font-size: 50px;
+    color: white;
+    z-index: 2;
+}
+.banner img {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    object-fit:cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.card {
+    background-color: #F6F6F6;
+    border-radius: 8px 8px 8px 8px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.logements {
+    position: relative;
+    width: 1240px;
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    grid-template-rows: 350px 350px 350px 350px 350px 350px 350px;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 8px 8px 8px 8px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.logement {
+    position: relative;
+    overflow: hidden;
+
+    img {
+        height: 100%;
+        width: 100%;
+        border-radius: 8px 8px 8px 8px;
+        object-fit:cover;
+    }
+
+    &::before{
+        content: "";
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+        z-index: 1;
+        position: absolute;
+        inset: 0;
+    }
+    
+    p {
+    position: absolute;
+    color: white;
+    margin-top: 290px;
+    margin-left: 20px;
+    width: 180px;
+    z-index: 2;
+    }
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FF6060;
+}
+.number {
+    font-size: 350px;
+    font-weight: bold;
+}
