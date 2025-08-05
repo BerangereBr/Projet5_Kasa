@@ -8,7 +8,6 @@ function About () {
     return (
         <div className="container">
             <div className="homePage">
-                <Header />
                 <Banner image={bannerAbout}/>
                 <Collapse />
             </div>
