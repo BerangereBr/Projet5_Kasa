@@ -1,11 +1,12 @@
 import datas from '../../logements.json'
+import { Link } from 'react-router-dom'
 
 function Card () {
     const logements = datas.map( data  => (
-        <div className='logement' key={data.id}>
+        <Link to={`/Logement/${data.id}`} className='logement' key={data.id}>
             <p>{data.title}</p>
             <img src={data.cover} alt='photo du logement'/>
-        </div>
+        </Link>
     ))
     return (
         <div className="card">

@@ -1,36 +1,35 @@
-import { useState } from "react"
-import datas from '../../about.json'
-import closeVecteur from '../assets/closeVecteur.png'
+import { useState } from 'react'
 import openVecteur from '../assets/openVecteur.png'
+import closeVecteur from '../assets/closeVecteur.png'
+import '../styles/main.scss'
 
+function Collapse({ titre, paragraphe }) {
+    const [open, setOpen] = useState(false)
 
-function Collapse() {
-  const [open, setOpen] = useState([]);
-  const isOpen = (index) => { 
-    if (open.includes(index)){
-      setOpen(open.filter((i) => i !==index));
-    }else{
-      setOpen([...open, index])
+    function toggle() {
+        if (open === true) {
+            setOpen(false)
+        } else {
+            setOpen(true)
+        };
     }
-  }
-  
-  return (
-    <div className="containerCollapse">
-      {datas.map((data, index) => (
-        <div className="collapse" key={index}>
-          <div>
+
+    return (
+
+        <div className="collapse">
+            
             <div className="collapse__title">
-              <h1>{data.titre}</h1>
-              <button onClick={() => isOpen(index)}>
-                <img src={open.includes(index) ? openVecteur : closeVecteur} alt="vecteur"/>
-              </button>
+                <h1>{titre}</h1>
+                <button onClick={() => { toggle() }}>
+                    <img src={open ? openVecteur : closeVecteur} alt='veteur'/>
+                </button>
             </div>
-          </div>
-          {open.includes(index) && <p>{data.paragraphe}</p>}
+            
+            <div className="collapse__paragraphe">
+               <p className={`paragraphe ${open ? 'open' : 'close'}`}>{paragraphe}</p>
+            </div>
         </div>
-      ))}
-    </div>
-  );
+    )
 }
 
 export default Collapse
