@@ -16,17 +16,15 @@ function Collapse({ titre, paragraphe }) {
 
     return (
 
-        <div className="collapse">
-            
+        <div className='collapse'>
             <div className="collapse__title">
                 <h1>{titre}</h1>
                 <button onClick={() => { toggle() }}>
-                    <img src={open ? openVecteur : closeVecteur} alt='veteur'/>
+                    <img src={open ? openVecteur : closeVecteur} alt='veteur' className={open ? 'openVecteur' : 'closeVecteur'}/>
                 </button>
             </div>
-            
-            <div className="collapse__paragraphe">
-               <p className={`paragraphe ${open ? 'open' : 'close'}`}>{paragraphe}</p>
+            <div className={`collapse__paragraphe ${open ? 'open' : 'close'}`}>
+               <p className='paragraphe'>{paragraphe}</p>
             </div>
         </div>
     )

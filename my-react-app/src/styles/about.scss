@@ -11,19 +11,34 @@
 
 .collapse {
     width: 80%;
+    overflow: hidden;
 }
 
 .collapse__paragraphe {
-    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
 }
-.collapse__paragraphe .paragraphe.open {
-    background-color: #F6F6F6;
+
+.collapse__paragraphe.open {
+    max-height: 1000px;
+    transition: max-height 0.5s ease;
+}
+
+.collapse__paragraphe.open .paragraphe {
     padding: 20px;
-    animation: slidedown 0.5s ease forwards;
+    background-color: #F6F6F6;
+    animation: slideDown 0.5s ease forwards;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
-.collapse__paragraphe .paragraphe.close {
-    animation: slidehup 0.5s ease forwards;
-    // display: none;
+.collapse__paragraphe .paragraphe {
+    padding: 20px;
+    background-color: #F6F6F6;
+    animation: slideUp 0.5s ease forwards;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 .collapse__title {
     display: flex;
@@ -38,38 +53,56 @@
     border-radius: 4px 4px 4px 4px;
     padding-left: 20px;
     padding-right: 20px;
-
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
     button {
         border: none;
         background-color: #FF6060;
         cursor: pointer;
     }
 
-    img {
-        background-color: #FF6060;
-        object-fit: contain;
+    .openVecteur {
+        animation: rotateOpenVecteur 0.5s ease;
+    }
+
+    .closeVecteur {
+        animation: rotateCloseVecteur 0.5s ease;
     }
 }
 
-@keyframes slidedown {
+@keyframes rotateOpenVecteur {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}
+
+@keyframes rotateCloseVecteur {
+    from {
+        transform: rotate(-180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes slideDown {
     from {
         transform: translateY(-100%);
     }
-
     to {
         transform: translateY(0%);
     }
 }
-@keyframes slidehup {
+@keyframes slideUp {
     from {
         transform: translateY(0%);
     }
-
     to {
         transform: translateY(-100%);
     }
 }
-// .btn .active{
-//     transform: rotate(-90deg);
-//     transition: transform 330ms ease-in-out;
-// }
