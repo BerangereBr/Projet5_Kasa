@@ -1,18 +1,21 @@
 import Slideshow from "../components/Slideshow"
 import datas from '../../logements.json'
-// import bannerAbout from '../assets/bannerAbout.png'
 import '../styles/logement.scss'
-import { useState } from "react"
 import { useParams } from "react-router-dom"
+import Collapse from "../components/Collapse"
 
-function Logement () {
-    const [image, setImage] = useState([])
-    const {id} = useParams()
-    console.log(id);
-    
+
+function Logement() {
+
+    const { id } = useParams()
+    const logement = datas.find(data => data.id === id)
+    const picture = logement.pictures
+
     return (
         <div>
-            <Slideshow picture={image}/>    
+            <Slideshow picture={picture} />
+            <Collapse titre={"Description"} paragraphe={logement.description} />
+            <Collapse titre={"Equipements"} paragraphe={logement.equipments} />
         </div>
     )
 }

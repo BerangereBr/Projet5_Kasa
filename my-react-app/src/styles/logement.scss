@@ -15,6 +15,8 @@
 
     &__leftVector {
         position: absolute;
+        background: transparent;
+        border: none;
         left: 20px;
         top: 160px;
         z-index: 2;
@@ -23,8 +25,17 @@
 
     &__rightVector {
         position: absolute;
+        background: transparent;
+        border: none;
         right: 20px;
         top: 160px;
         z-index: 2;
+    }
+    &__number {
+        position: absolute;
+        z-index: 2;
+        bottom: 20px;
+        left: 600px;
+        color: white;
     }
 }

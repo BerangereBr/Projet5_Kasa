@@ -1,24 +1,33 @@
 // import datas from '../../logements.json'
 import vector from '../assets/carrouselVector.png'
+import { useState } from 'react';
 
 function Slideshow({ picture }) {
-    let index = 0
-    let prevPicture = index - 1;
-    if (index == 0) {
-        prevPicture = index - 1
+    const [index, setIndex] = useState(1)
+
+    const prevPicture = () => {
+        if (index == 1) {
+            setIndex(picture.length - 1)
+        }else {
+            setIndex(index - 1);
+        }
     }
-    let nextPicture = index + 1
-    if (index == index.lenght) {
-        nextPicture = 0
+
+    const nextPicture = () => {
+        if (index == picture.length - 1) {
+            setIndex(1)
+        } else {
+            setIndex(index + 1)
+        }
     }
-    let totalPictures = picture.lenght
+    let totalPictures = picture.length
 
     return (
         <div className='carrousel'>
             {totalPictures > 1 ? <button className='carrousel__leftVector' onClick={prevPicture}><img src={vector} alt='flèche'></img></button> : null}
-            <img className='carrousel__image' src={picture} alt='photo du logement'></img>
+            <img className='carrousel__image' src={picture[index]} alt='photo du logement'></img>
             {totalPictures > 1 ? <button className='carrousel__rightVector' onClick={nextPicture}><img  src={vector} alt='flèche'></img></button> : null}
-            {totalPictures > 1 ? <div>{`${picture}/${totalPictures}`}</div> : null}
+            {totalPictures > 1 ? <p className='carrousel__number'>{`${index }/${totalPictures - 1}`}</p> : null}
         </div>
     )
 }
