@@ -48,46 +48,49 @@
     background-color: #FF6060;
     color: white;
     font-size: 10px;
-    font-weight: bold;
     height: 40px;
-    border-radius: 4px 4px 4px 4px;
+    border-radius: 4px ;
     padding-left: 20px;
     padding-right: 20px;
     overflow: hidden;
     position: relative;
     z-index: 2;
+
     button {
         border: none;
         background-color: #FF6060;
         cursor: pointer;
     }
 
-    .openVecteur {
-        animation: rotateOpenVecteur 0.5s ease;
+    .vector {
+        transform: rotate(180deg);
+    }
+    .openVector {
+        animation: rotateOpenVector 0.5s ease forwards;
     }
 
-    .closeVecteur.open {
-        animation: rotateCloseVecteur 0.5s ease;
+    .closeVector{
+        animation: rotateCloseVector 0.5s ease forwards;
     }
 }
 
-@keyframes rotateOpenVecteur {
+@keyframes rotateOpenVector {
     from {
         transform: rotate(180deg);
     }
 
     to {
-        transform: rotate(0);
+        transform: rotate(0deg);
     }
 }
 
-@keyframes rotateCloseVecteur {
+@keyframes rotateCloseVector {
     from {
-        transform: rotate(-180deg);
+        transform: rotate(0deg);
     }
 
     to {
-        transform: rotate(0deg);
+        transform: rotate(180deg);
     }
 }
 @keyframes slideDown {

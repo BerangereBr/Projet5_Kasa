@@ -1,16 +1,18 @@
 import { useState } from 'react'
-import openVecteur from '../assets/openVecteur.png'
-import closeVecteur from '../assets/closeVecteur.png'
+import vectorImage from '../assets/vector.png'
 import '../styles/main.scss'
 
 function Collapse({ titre, paragraphe }) {
     const [open, setOpen] = useState(false)
+    const [vector, setVector] = useState(false)
 
     function toggle() {
         if (open === true) {
             setOpen(false)
+            setVector(true)
         } else {
             setOpen(true)
+            setVector(true)
         };
     }
 
@@ -20,11 +22,11 @@ function Collapse({ titre, paragraphe }) {
             <div className="collapse__title">
                 <h1>{titre}</h1>
                 <button onClick={() => { toggle() }}>
-                    <img src={open ? openVecteur : closeVecteur} alt='veteur' className={open ? 'openVecteur' : 'closeVecteur'}/>
+                    <img src={vectorImage} alt='veteur' className={ open ? vector ? 'openVector' : '' : vector ? 'closeVector' : 'vector'}/>
                 </button>
             </div>
             <div className={`collapse__paragraphe ${open ? 'open' : 'close'}`}>
-               <p className='paragraphe'>{paragraphe}</p>
+               <p className={ titre === 'Equipements' ? 'paragraphe__equipement' : 'paragraphe'}>{paragraphe}</p> 
             </div>
         </div>
     )

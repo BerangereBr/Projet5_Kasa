@@ -24,7 +24,7 @@ function Logement() {
     const tag = logement.tags
     const person = logement.host
     const rating = logement.rating
-
+    const equipement = logement.equipments
 
     return (
         
@@ -33,7 +33,7 @@ function Logement() {
             <div className="logement__info">
                 <div>
                     <h1 className="logement__info__title">{logement.title}</h1>
-                    <p>{logement.location}</p>
+                    <p className="logement__info__location">{logement.location}</p>
                 </div>
                 <div className="logement__info__starPerson">
                     <div className="logement__info__person">
@@ -54,7 +54,7 @@ function Logement() {
             </div>
             <div className="collapse__logement">
                 <Collapse titre={"Description"} paragraphe={logement.description} />
-                <Collapse titre={"Equipements"} paragraphe={logement.equipments} />
+                <Collapse titre={"Equipements"} paragraphe={equipement.map( objet => <p>{objet}</p>)} />
             </div>
         </div>
     )
