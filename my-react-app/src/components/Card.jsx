@@ -12,7 +12,9 @@ function Card () {
 
     return (
         <div className="card">
+            <div>
             <div className='logements'>{logements}</div>
+            </div>
         </div>
     )
 }

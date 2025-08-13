@@ -26,7 +26,7 @@ function Collapse({ titre, paragraphe }) {
                 </button>
             </div>
             <div className={`collapse__paragraphe ${open ? 'open' : 'close'}`}>
-               <p className={ titre === 'Equipements' ? 'paragraphe__equipement' : 'paragraphe'}>{paragraphe}</p> 
+               <div className={ titre === 'Equipements' ? 'paragraphe__equipement' : 'paragraphe'}>{paragraphe}</div> 
             </div>
         </div>
     )

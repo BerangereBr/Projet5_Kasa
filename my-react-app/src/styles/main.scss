@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,26 +6,43 @@
 
 :root {
     font-family: "Montserrat", sans-serif;
-    height: 100%;
 }
 
 .app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-main { 
-    flex: 1;
     display: flex;
-    justify-content: center; 
- }
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1240px;
+    width: 100%;
+
+    @media (max-width: 996px) {
+        width: 95%;
+
+    }
+}
+
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 120px;
-    width: 1240px;
+    max-width: 1240px;
+    width: 100%;
+
+    @media (max-width: 996px) {
+        width: 95%;
+
+    }
 }
 
 .header nav {
@@ -40,7 +57,7 @@ main {
 
 .nav {
     text-decoration: none;
-    
+
     &.active {
         text-decoration: underline;
     }
@@ -52,18 +69,18 @@ main {
 
 .banner {
     position: relative;
-    height: 150px;
+    height: 200px;
     overflow: hidden;
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 8px;
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px;
 
     p {
         text-shadow:
-        -1px -1px 0 black,
-        1px -1px 0 black,
-        -1px  1px 0 black,
-        1px  1px 0 black;
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black;
         font-size: 50px;
         color: white;
         z-index: 2;
@@ -71,9 +88,9 @@ main {
 
     img {
         position: relative;
-        height: 150px;
+        height: 200px;
         width: 100%;
-        object-fit:cover;
+        object-fit: cover;
         z-index: -1;
 
     }
@@ -88,7 +105,20 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.overlayLow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
@@ -99,8 +129,9 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 150px;
-    
+
     img {
         width: 110px;
         height: 35px;
@@ -112,4 +143,3 @@ main {
         font-size: 20px;
     }
 }
-

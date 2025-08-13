@@ -2,7 +2,7 @@ function Banner ({image, text}) {
     return (
         <div className='banner'>
             <img src={image} alt="image de la banniere"/>
-            <div className='overlay'>
+            <div className={ text ? 'overlay' : 'overlayLow'}>
                 {text && <p>{text}</p>}
             </div>
         </div>

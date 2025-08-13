@@ -4,14 +4,12 @@ import '../styles/about.scss'
 import bannerAbout from '../assets/bannerAbout.png'
 
 
-function About () {
+function About() {
     return (
-        <div className="container">
-            <div className="homePage">
-                <Banner image={bannerAbout}/>
-                <ContainerCollapse />
-            </div>
-        </div>
+        <>
+            <Banner image={bannerAbout} />
+            <ContainerCollapse />
+        </>
     )
 }
 

@@ -29,7 +29,7 @@ function Logement() {
     return (
         
         <div className="container__logement">
-            <Slideshow picture={picture} />
+            <Slideshow pictures={picture} />
             <div className="logement__info">
                 <div>
                     <h1 className="logement__info__title">{logement.title}</h1>
@@ -54,7 +54,7 @@ function Logement() {
             </div>
             <div className="collapse__logement">
                 <Collapse titre={"Description"} paragraphe={logement.description} />
-                <Collapse titre={"Equipements"} paragraphe={equipement.map( objet => <p>{objet}</p>)} />
+                <Collapse titre={"Equipements"} paragraphe={equipement.map( (objet, index) => <p key={index}>{objet}</p>)} />
             </div>
         </div>
     )
