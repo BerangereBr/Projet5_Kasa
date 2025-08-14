@@ -1,14 +1,15 @@
 .container__logement {
-    width: 1240px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
+    margin-top: 20px;
 }
 .carrousel {
     width: 100%;
-    height: 415px;
+    height: 350px;
     position: relative;
     border-radius: 20px;
     margin-bottom: 30px;
@@ -27,7 +28,7 @@
         background: transparent;
         border: none;
         left: 20px;
-        top: 160px;
+        top: 140px;
         z-index: 2;
         transform: rotate(180deg);
         opacity: 80%;
@@ -38,7 +39,7 @@
         background: transparent;
         border: none;
         right: 20px;
-        top: 160px;
+        top: 140px;
         z-index: 2;
         opacity: 80%;
     }
@@ -46,7 +47,7 @@
         position: absolute;
         z-index: 2;
         bottom: 20px;
-        left: 600px;
+        left: 50%;
         color: white;
     }
 }
@@ -60,6 +61,7 @@
     &__title {
         color: #FF6060;
         font-weight: 500;
+        margin-bottom: 8px;
     }
 
     &__location {
@@ -68,8 +70,15 @@
 
     &__starPerson {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: flex-end;
+        align-items: center;
+
+        @media (max-width: 996px) {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
     }
     &__person {
         display: flex;
@@ -89,14 +98,18 @@
             width: 60px;
         }
     }
+    @media (max-width: 996px) {
+        flex-direction: column;
+    }
 }
 
 .logement__list {
-    width: 100%;
+    width: 95%;
     display: flex;
     justify-content:flex-start;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-top: 20px;
+
     &__tag {
         display: flex;
         flex-direction: row;
@@ -108,11 +121,15 @@
             font-size: 14px;
             color: white;
             background-color:  #FF6060;
-            border-radius: 10px;
+            border-radius: 8px;
             padding-top: 2px;
             padding-bottom: 2px;
             padding-left: 20px;
             padding-right: 20px;
+
+            @media (max-width: 996px) {
+                border-radius: 5px;  
+            }
         }
     }
 }
@@ -120,17 +137,24 @@
 .collapse__logement {
     display: flex;
     gap: 50px;
+    margin-top: 30px;
 
     h1 {
         font-size: 18px;
         font-weight: 600;
     }
+
+    @media (max-width: 996px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 }
 
 .logement__star {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+    align-items: center;
 }
 
 .paragraphe__equipement {

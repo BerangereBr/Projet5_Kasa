@@ -27,7 +27,7 @@ function Slideshow({ pictures }) {
             {totalPictures > 1 ? <button className='carrousel__leftVector' onClick={prevPicture}><img src={vector} alt='flèche'></img></button> : null}
             <img className='carrousel__image' src={pictures[index]} alt='photo du logement'></img>
             {totalPictures > 1 ? <button className='carrousel__rightVector' onClick={nextPicture}><img  src={vector} alt='flèche'></img></button> : null}
-            {totalPictures > 1 ? <p className='carrousel__number'>{`${index }/${totalPictures - 1}`}</p> : null}
+            {totalPictures > 1 ? <p className='carrousel__number'>{`${index}/${totalPictures - 1}`}</p> : null}
         </div>
     )
 }

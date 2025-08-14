@@ -34,12 +34,11 @@ function Logement() {
                 <div>
                     <h1 className="logement__info__title">{logement.title}</h1>
                     <p className="logement__info__location">{logement.location}</p>
+                    <div className="logement__list">
+                        <ul className="logement__list__tag">{tag.map((tag, index) => <li key={index}>{tag}</li>)}</ul>
+                    </div>
                 </div>
                 <div className="logement__info__starPerson">
-                    <div className="logement__info__person">
-                        <h2>{person.name}</h2>
-                        <img src={person.picture} />
-                    </div>
                     <div className="logement__star">
                         <img src={rating >= 1 ? starActive : star}/>
                         <img src={rating >= 2 ? starActive : star}/>
@@ -47,10 +46,11 @@ function Logement() {
                         <img src={rating >= 4 ? starActive : star}/>
                         <img src={rating >= 5 ? starActive : star}/>
                     </div>
+                    <div className="logement__info__person">
+                        <h2>{person.name}</h2>
+                        <img src={person.picture} />
+                    </div>
                 </div>
-            </div>
-            <div className="logement__list">
-                <ul className="logement__list__tag">{tag.map((tag, index) => <li key={index}>{tag}</li>)}</ul>
             </div>
             <div className="collapse__logement">
                 <Collapse titre={"Description"} paragraphe={logement.description} />

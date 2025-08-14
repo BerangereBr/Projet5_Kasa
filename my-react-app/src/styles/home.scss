@@ -4,6 +4,10 @@
     margin-top: 40px;
     margin-bottom: 40px;
     width: 100%;
+
+        @media (max-width: 996px) {
+         background-color: white;
+    }
 }
 
 .logements {
@@ -11,10 +15,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     border-radius: 8px ;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @media (max-width : 1150px) {
+        gap: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
 }
 
 .logement {
@@ -46,5 +56,15 @@
     margin-left: 20px;
     width: 180px;
     z-index: 2;
+    }
+
+    @media (max-width : 1150px) {
+        width: 45%;
+        height:350px;
+    }
+
+    @media (max-width : 996px) {
+        width: 90%;
+        height:350px;
     }
 }

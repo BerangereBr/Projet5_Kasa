@@ -21,8 +21,13 @@ main {
     flex: 1;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     max-width: 1240px;
     width: 100%;
+
+    @media (max-width : 1150px) {
+        width: 95%;
+    }
 
     @media (max-width: 996px) {
         width: 95%;
@@ -39,6 +44,10 @@ main {
     max-width: 1240px;
     width: 100%;
 
+    @media (max-width: 1150px) {
+        width: 95%;
+    }
+
     @media (max-width: 996px) {
         width: 95%;
 
@@ -49,6 +58,8 @@ main {
     display: flex;
     flex-direction: row;
     gap: 50px;
+    margin: 0;
+    padding: 0;
 }
 
 .header a {
@@ -75,7 +86,7 @@ main {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px;
 
-    p {
+    .title__banner {
         text-shadow:
             -1px -1px 0 black,
             1px -1px 0 black,
@@ -84,6 +95,17 @@ main {
         font-size: 50px;
         color: white;
         z-index: 2;
+
+        &::before {
+            content: "Chez vous, partout et ailleurs";
+        }
+
+        @media (max-width: 800px) {
+            &::before {
+                content: "Chez vous,\A partout et ailleurs";
+                white-space: pre-line;
+            }
+        }
     }
 
     img {
@@ -137,9 +159,18 @@ main {
         height: 35px;
         margin-bottom: 30px;
         margin-top: 20px;
-    }
 
+        @media (max-width: 996px) {
+            margin-bottom: 10px;
+        }
+    }
     p {
         font-size: 20px;
+        text-align: center;
+
+        @media (max-width: 996px) {
+            width: 40%;
+            text-align: center;
+        }
     }
 }
