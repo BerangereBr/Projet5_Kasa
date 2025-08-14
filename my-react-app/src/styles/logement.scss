@@ -1,3 +1,5 @@
+@use './variables' as vars;
+
 .container__logement {
     width: 100%;
     display: flex;
@@ -59,7 +61,7 @@
     flex-direction: row;
 
     &__title {
-        color: #FF6060;
+        color: vars.$color-red;
         font-weight: 500;
         margin-bottom: 8px;
     }
@@ -91,7 +93,7 @@
         text-align: end;
         font-weight: normal;
         width: 100px;
-        color: #FF6060;
+        color:  vars.$color-red;
         }
         img {
             border-radius: 100px ;
@@ -120,7 +122,7 @@
             font-weight: 600;
             font-size: 14px;
             color: white;
-            background-color:  #FF6060;
+            background-color:  vars.$color-red;
             border-radius: 8px;
             padding-top: 2px;
             padding-bottom: 2px;
@@ -159,7 +161,7 @@
 
 .paragraphe__equipement {
     padding: 20px;
-    background-color: #F6F6F6;
+    background-color: vars.$color-grey;
     animation: slideUp 0.5s ease forwards;
     overflow: hidden;
     position: relative;
@@ -169,7 +171,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #F6F6F6;
+    background-color: vars.$color-grey;
     animation: slideDown 0.5s ease forwards;
     overflow: hidden;
     position: relative;
