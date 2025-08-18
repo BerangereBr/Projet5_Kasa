@@ -50,8 +50,14 @@ main {
 
     @media (max-width: 996px) {
         width: 95%;
-
     }
+
+    @media (max-width: 500px) {
+        img {
+            width: 180px;
+        }
+    }
+
 }
 
 .header nav {
@@ -60,6 +66,10 @@ main {
     gap: 50px;
     margin: 0;
     padding: 0;
+
+    @media (max-width: 500px) {
+        gap: 30px;
+    }
 }
 
 .header a {
@@ -104,6 +114,11 @@ main {
             &::before {
                 content: "Chez vous,\A partout et ailleurs";
                 white-space: pre-line;
+            }
+        }
+        @media (max-width: 500px) {
+            &::before {
+                font-size: 40px;
             }
         }
     }

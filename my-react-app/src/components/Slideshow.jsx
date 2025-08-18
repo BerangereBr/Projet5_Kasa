@@ -5,7 +5,7 @@ import { useState } from 'react';
 function Slideshow({ pictures }) {
     const [index, setIndex] = useState(1)
 
-    const prevPicture = () => {
+    const goPrevPicture = () => {
         if (index == 1) {
             setIndex(pictures.length - 1)
         }else {
@@ -13,7 +13,7 @@ function Slideshow({ pictures }) {
         }
     }
 
-    const nextPicture = () => {
+    const goNextPicture = () => {
         if (index == pictures.length - 1) {
             setIndex(1)
         } else {
@@ -24,9 +24,9 @@ function Slideshow({ pictures }) {
 
     return (
         <div className='carrousel'>
-            {totalPictures > 1 ? <button className='carrousel__leftVector' onClick={prevPicture}><img src={vector} alt='flèche'></img></button> : null}
+            {totalPictures > 1 ? <button className='carrousel__leftVector' onClick={goPrevPicture}><img src={vector} alt='flèche'></img></button> : null}
             <img className='carrousel__image' src={pictures[index]} alt='photo du logement'></img>
-            {totalPictures > 1 ? <button className='carrousel__rightVector' onClick={nextPicture}><img  src={vector} alt='flèche'></img></button> : null}
+            {totalPictures > 1 ? <button className='carrousel__rightVector' onClick={goNextPicture}><img  src={vector} alt='flèche'></img></button> : null}
             {totalPictures > 1 ? <p className='carrousel__number'>{`${index}/${totalPictures - 1}`}</p> : null}
         </div>
     )
