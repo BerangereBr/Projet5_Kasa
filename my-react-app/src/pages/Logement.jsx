@@ -11,11 +11,12 @@ function Logement() {
     const navigate = useNavigate()
     const { id } = useParams()
     const logement = datas.find(data => data.id === id)
-    
-    useEffect (() =>  {
-    if (!logement) {
-        navigate('/404', {replace : true})
-    }}, [navigate, logement])
+
+    useEffect(() => {
+        if (!logement) {
+            navigate('/404', { replace: true })
+        }
+    }, [navigate, logement])
 
     if (!logement) {
         return ''
@@ -27,7 +28,7 @@ function Logement() {
     const equipement = logement.equipments
 
     return (
-        
+
         <div className="container__logement">
             <Slideshow pictures={picture} />
             <div className="logement__info">
@@ -40,11 +41,11 @@ function Logement() {
                 </div>
                 <div className="logement__info__starPerson">
                     <div className="logement__star">
-                        <img src={rating >= 1 ? starActive : star}/>
-                        <img src={rating >= 2 ? starActive : star}/>
-                        <img src={rating >= 3 ? starActive : star}/>
-                        <img src={rating >= 4 ? starActive : star}/>
-                        <img src={rating >= 5 ? starActive : star}/>
+                        <img src={rating >= 1 ? starActive : star} />
+                        <img src={rating >= 2 ? starActive : star} />
+                        <img src={rating >= 3 ? starActive : star} />
+                        <img src={rating >= 4 ? starActive : star} />
+                        <img src={rating >= 5 ? starActive : star} />
                     </div>
                     <div className="logement__info__person">
                         <h2>{person.name}</h2>
@@ -54,7 +55,7 @@ function Logement() {
             </div>
             <div className="collapse__logement">
                 <Collapse titre={"Description"} paragraphe={logement.description} />
-                <Collapse titre={"Equipements"} paragraphe={equipement.map( (objet, index) => <p key={`${objet}-${index}`}>{objet}</p>)} />
+                <Collapse titre={"Equipements"} paragraphe={equipement.map((objet, index) => <p key={`${objet}-${index}`}>{objet}</p>)} />
             </div>
         </div>
     )
