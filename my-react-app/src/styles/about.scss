@@ -18,18 +18,18 @@
 
 .collapse__paragraphe {
     max-height: 0;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease-in-out;
 }
 
 .collapse__paragraphe.open {
     max-height: 1000px;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease-in-out;
 }
 
 .collapse__paragraphe.open .paragraphe {
     padding: 20px;
     background-color: vars.$color-grey;
-    animation: slideDown 0.5s ease forwards;
+    animation: slideDown 0.5s ease-in-out forwards;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -37,7 +37,7 @@
 .collapse__paragraphe .paragraphe {
     padding: 20px;
     background-color: vars.$color-grey;
-    animation: slideUp 0.5s ease forwards;
+    animation: slideUp 0.5s ease-in-out forwards;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -68,11 +68,11 @@
         transform: rotate(180deg);
     }
     .openVector {
-        animation: rotateOpenVector 0.5s ease forwards;
+        animation: rotateOpenVector 0.5s ease-in-out forwards;
     }
 
     .closeVector{
-        animation: rotateCloseVector 0.5s ease forwards;
+        animation: rotateCloseVector 0.5s ease-in-out forwards;
     }
 }
 

@@ -11,7 +11,7 @@ function About() {
             <Banner image={bannerAbout} />
             <div className="containerCollapse">
                 {datas.map((data, index) => (
-                    <Collapse key={index} titre={data.titre} paragraphe={data.paragraphe} />))}
+                    <Collapse key={`${data}-${index}`} titre={data.titre} paragraphe={data.paragraphe} />))}
             </div>
         </>
     )

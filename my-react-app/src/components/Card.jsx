@@ -5,16 +5,14 @@ function Card () {
     
     const logements = datas.map( data  => (
         <Link to={`/logement/${data.id}`} className='logement' key={data.id}>
-            <p>{data.title}</p>
+            <h1>{data.title}</h1>
             <img src={data.cover} alt='photo du logement'/>
         </Link>  
     ))
 
     return (
         <div className="card">
-            <div>
             <div className='logements'>{logements}</div>
-            </div>
         </div>
     )
 }
