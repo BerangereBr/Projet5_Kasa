@@ -1,8 +1,7 @@
-import Banner from "../components/banner"
+import Banner from "../components/Banner"
 import Card from '../components/Card'
 import '../styles/home.scss'
 import bannerHome from '../assets/bannerHome.png'
-
 
 function Home() {
     return (

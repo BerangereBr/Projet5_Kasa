@@ -1,9 +1,8 @@
-import Banner from "../components/banner";
+import Banner from "../components/Banner";
 import '../styles/about.scss'
 import bannerAbout from '../assets/bannerAbout.png'
 import datas from '../../about.json'
 import Collapse from "../components/Collapse"
-
 
 function About() {
     return (

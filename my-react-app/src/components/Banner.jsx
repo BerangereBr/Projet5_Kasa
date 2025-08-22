@@ -1,8 +1,8 @@
-function Banner ({image, text}) {
+function Banner({ image, text }) {
     return (
         <div className='banner'>
-            <img src={image} alt="image de la banniere"/>
-            <div className={ text ? 'overlay' : 'overlayLow'}>
+            <img src={image} alt='image de la banniere' />
+            <div className={text ? 'overlay' : 'overlayLow'}>
                 {text ? <p>{text}</p> : null}
             </div>
         </div>

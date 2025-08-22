@@ -16,19 +16,19 @@ function Collapse({ titre, paragraphe }) {
         };
     }
 
-    const vectorRotate = open && vector ? 'openVector' : 
+    const vectorRotate = open && vector ? 'openVector' :
         vector ? 'closeVector' : 'vector'
-    return (
 
+    return (
         <div className='collapse'>
             <div className="collapse__title">
                 <h1>{titre}</h1>
                 <button onClick={() => { toggle() }}>
-                    <img src={vectorImage} alt='veteur' className={vectorRotate}/>
+                    <img src={vectorImage} alt='veteur' className={vectorRotate} />
                 </button>
             </div>
             <div className={`collapse__paragraphe ${open ? 'open' : 'close'}`}>
-               <div className={ titre === 'Equipements' ? 'paragraphe__equipement' : 'paragraphe'}>{paragraphe}</div> 
+                <div className={titre === 'Equipements' ? 'paragraphe__equipement' : 'paragraphe'}>{paragraphe}</div>
             </div>
         </div>
     )

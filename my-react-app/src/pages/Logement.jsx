@@ -21,6 +21,7 @@ function Logement() {
     if (!logement) {
         return ''
     }
+
     const picture = logement.pictures
     const tag = logement.tags
     const person = logement.host
@@ -28,7 +29,6 @@ function Logement() {
     const equipement = logement.equipments
 
     return (
-
         <div className="container__logement">
             <Slideshow pictures={picture} />
             <div className="logement__info">

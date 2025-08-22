@@ -1,4 +1,3 @@
-// import datas from '../../logements.json'
 import vector from '../assets/carrouselVector.png'
 import { useState } from 'react';
 
